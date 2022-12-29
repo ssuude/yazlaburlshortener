@@ -126,11 +126,15 @@
                                 <form action="/dashboard" method="post">
                                     <!--Start Message Display-->
                                     <% if(created) { %> 
+                                        <%var index=0; %> 
                                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                 <span aria-hidden="true">×</span>
                                             </button>
-                                            Your short url is <a href="<%= created %>" class="alert-link"><%= created %> </a>.
+                                            Your short url is <a id="p<%= index%>" href="<%= created %>" class="alert-link"><%= created %> </a>.
+                                            <a onclick="copyToClipboard('#p<%= index %>');" class="btn btn-lg-square mx-2"><i style="font-size: 30px;"class="fa fa-thumbs-up"></i></a>
+
+                                        
                                         </div>
                                     <% } %>
                                     <% if(error) { %>
@@ -168,13 +172,14 @@
                                     <button type="submit" value="submit" class="btn btn-primary waves-effect waves-light">KISALT!</button>
                                 </form><!-- end form-->
                             </div>
+                            
                         </div>
                     </div> <!-- end col -->
                 </div> <!-- end row --> 
                 
                 
                 
-            </div>
+            
             <!-- container-fluid -->
         </div>
         <!-- content -->
@@ -187,3 +192,29 @@
     <!-- ============================================================== -->
 
 </div>
+<style>
+    i.fa {
+    font-size: 40px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fa:hover {
+  color: rgb(85, 34, 157);
+}
+.fa:focus {
+  color: rgb(16, 4, 33);
+}
+</style>
+<script>
+    function copyToClipboard(element) {
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val($(element).text()).select();
+      document.execCommand("copy");
+      $temp.remove();
+     
+    }
+
+    
+  </script>
