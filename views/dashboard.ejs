@@ -8,7 +8,7 @@
         <div class="topbar-left">
             <a href="/" class="logo">
                 <span class="logo-light">
-                    <i class="mdi mdi-camera-control"></i> short
+                    <i class="mdi mdi-camera-control"></i> URL KISALTICI
                 </span>
                 <span class="logo-sm">
                     <i class="mdi mdi-camera-control"></i>
@@ -31,7 +31,7 @@
                             <!-- item-->
 
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-danger" href="/users/logout"><i class="mdi mdi-power text-danger"></i> Logout</a>
+                            <a  href="/users/logout"><i class="mdi mdi-power text-danger"></i> Çıkış</a>
                         </div>
                     </div>
                 </li>
@@ -52,39 +52,45 @@
     </div>
     <!-- Top Bar End -->
 
-    <!-- ========== Left Sidebar Start ========== -->
-    <div class="left side-menu">
-        <div class="slimscroll-menu" id="remove-scroll">
+   <!-- ========== Left Sidebar Start ========== -->
+   <div class="left side-menu">
+    <div class="slimscroll-menu" id="remove-scroll">
 
-            <!--- Sidemenu -->
-            <div id="sidebar-menu">
-                <!-- Left Menu Start -->
-                <ul class="metismenu" id="side-menu">
-                    <li class="menu-title">Menu</li>
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+            <!-- Left Menu Start -->
+            <ul class="metismenu" id="side-menu">
+                <li class="menu-title">Menu</li>
+                <li>
+                    <a href="/dashboard" class="waves-effect">
+                        <i class="icon-accelerator"></i><span> Panel </span>
+                    </a>
+                </li>
                 
+                <li>
+                    <a href="/dashboard/url" class="waves-effect">
+                        <i class="fa fa-list"></i><span> Url Geçmişi </span>
+                    </a>
+                </li>
+                <% if (user.isAdmin) { %> 
                     <li>
-                        <a href="/dashboard/url" class="waves-effect">
-                            <i></i><span> Urls History </span>
+                        <a href="/dashboard/admin" class="waves-effect">
+                            <i class="fa fa-cubes"></i><span> Admin Paneli </span>
                         </a>
-                    </li>
-                    <% if (user.isAdmin) { %> 
-                        <li>
-                            <a href="/dashboard/admin" class="waves-effect">
-                                <i class=""></i><span> Admin Dashboard </span>
-                            </a>
-                        </li>  
-                    <% } %> 
-                </ul>
+                    </li>  
+                <% } %>
 
-            </div>
-            <!-- Sidebar -->
-            <div class="clearfix"></div>
+            </ul>
 
         </div>
-        <!-- Sidebar -left -->
+        <!-- Sidebar -->
+        <div class="clearfix"></div>
 
     </div>
-    <!-- Left Sidebar End -->
+    <!-- Sidebar -left -->
+
+</div>
+<!-- Left Sidebar End -->
 
     <!-- ============================================================== -->
     <!-- Start right Content here -->
@@ -100,7 +106,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-right">
-                                <li class="breadcrumb-item"><a href="javascript:void(0);">Hoşgeldin, <%= user.name %> </a></li>
+                                <li class="breadcrumb-item" style="font-size: medium;"><a href="javascript:void(0);"><b>HOŞGELDİN,  <%= user.name %> </b> </a></li>
                             </ol>
                         </div>
                     </div> <!-- end row -->
@@ -112,19 +118,23 @@
                         <div class="card m-b-30">
                             <div class="card-body">
 
-                                <h4 class="mt-0 header-title">Url Shortner</h4>
-                                <p class="sub-title">Shorten your <code
-                                        class="highlighter-rouge">long url</code> with one click</code>.</p>
+                                <h2 class="mt-0 header-title">Url Kısaltıcı</h2>
+                                <h5 class="sub-title">Tek tık ile  uzun url linkinizi <code
+                                        class="highlighter-rouge">kısaltın</code> </code>.</h5>
                                 
                                 <!-- start form -->
                                 <form action="/dashboard" method="post">
                                     <!--Start Message Display-->
                                     <% if(created) { %> 
+                                        <%var index=0; %> 
                                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                 <span aria-hidden="true">×</span>
                                             </button>
-                                            Your short url is <a href="<%= created %>" class="alert-link"><%= created %> </a>.
+                                            Your short url is <a id="p<%= index%>" href="<%= created %>" class="alert-link"><%= created %> </a>.
+                                            <a onclick="copyToClipboard('#p<%= index %>');" class="btn btn-lg-square mx-2"><i style="font-size: 30px;"class="fa fa-thumbs-up"></i></a>
+
+                                        
                                         </div>
                                     <% } %>
                                     <% if(error) { %>
@@ -137,21 +147,21 @@
                                     <% } %>
                                     <!--End Message Display-->
                                     <div class="form-group row">
-                                        <label for="url" class="col-sm-2 col-form-label">Long Url</label>
+                                        <label for="url" class="col-sm-2 col-form-label">Uzun Url</label>
                                         <div class="col-sm-10">
-                                            <input class="form-control" type="text" name="url" id="url" placeholder="Enter long url" required>
+                                            <input class="form-control" type="text" name="url" id="url" placeholder="Uzun link giriniz" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="slug" class="col-sm-2 col-form-label">Slug</label>
+                                        <label for="slug" class="col-sm-2 col-form-label">Kısaltılmış Ad</label>
                                         <div class="col-sm-10">
-                                            <input class="form-control" type="text" name="slug" id="slug" placeholder="Enter slug">
+                                            <input class="form-control" type="text" name="slug" id="slug" placeholder="Kısa adı giriniz">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="slug" class="col-sm-2 col-form-label">Valid Till</label>
+                                        <label for="slug" class="col-sm-2 col-form-label">Geçerlilik Süresi</label>
                                         <div class="col-sm-10">
-                                            <input class="form-control" type="text" name="validFor" id="validFor" placeholder="No of days url will be valid">
+                                            <input class="form-control" type="text" name="validFor" id="validFor" placeholder="Link bu gün sayısı ile geçerli kalacaktır">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -159,16 +169,17 @@
                                             <input class="form-control" type="hidden" name="userid" id="userid" value="<%= user.id %>">
                                         </div>
                                     </div>
-                                    <button type="submit" value="submit" class="btn btn-primary waves-effect waves-light">Shorten!</button>
+                                    <button type="submit" value="submit" class="btn btn-primary waves-effect waves-light">KISALT!</button>
                                 </form><!-- end form-->
                             </div>
+                            
                         </div>
                     </div> <!-- end col -->
                 </div> <!-- end row --> 
                 
                 
                 
-            </div>
+            
             <!-- container-fluid -->
         </div>
         <!-- content -->
@@ -181,3 +192,29 @@
     <!-- ============================================================== -->
 
 </div>
+<style>
+    i.fa {
+    font-size: 40px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fa:hover {
+  color: rgb(85, 34, 157);
+}
+.fa:focus {
+  color: rgb(16, 4, 33);
+}
+</style>
+<script>
+    function copyToClipboard(element) {
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val($(element).text()).select();
+      document.execCommand("copy");
+      $temp.remove();
+     
+    }
+
+    
+  </script>
