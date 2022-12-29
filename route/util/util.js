@@ -1,6 +1,8 @@
 const yup = require('yup')
 const {nanoid} = require('nanoid');
 
+
+
 // Load Url model
 const Url = require('../../models/Url');
 Url.collection.createIndex({"slug":1},{unique: true})
@@ -15,9 +17,8 @@ const urlSchema = yup.object().shape({
     url: yup.string().trim().url().required(),
 });
 
-
 async function createShortURL (req,res,page) {
-    let { slug, url, userid, validFor } = req.body;
+    let { slug, url, userid, validFor, } = req.body;
     let notifications = "";
 
     //Store logs in session
@@ -44,7 +45,7 @@ async function createShortURL (req,res,page) {
 
         //If slug not given genrate random
         if (!slug) {
-            slug = nanoid(7);
+            slug = nanoid(10);
         } else {
             if(slug==="url" || slug==="dashboard" || slug==="users"){
                 throw new Error('Banned words');
@@ -72,6 +73,11 @@ async function createShortURL (req,res,page) {
             userid,
             validFor
         });
+
+        
+
+
+
 
 
         const created = await newUrl.save();

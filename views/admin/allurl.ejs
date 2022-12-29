@@ -111,7 +111,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="waves-effect">
+                        <a href="/dashboard/admin/allurl" class="waves-effect">
                             <i class="icon-accelerator"></i><span> All Urls </span>
                         </a>
                     </li>  
@@ -199,7 +199,7 @@
                                                <td><%= url.clickCount %> </td>
                                                <td>
                                                    <div>
-                                                       <form action="/dashboard/admin/allurl/deleteurl" method="post">
+                                                       <form action="/allurl/deleteurl" method="post">
                                                            <input type="hidden" name="id" id="id" value="<%=url.slug%>">
                                                            <button type="submit" value="submit" class="btn btn-primary btn-sm">Delete</button>
                                                        </form>
