@@ -30,12 +30,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                             <!-- item-->
-                            <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle"></i> Profile</a>
-                            <a class="dropdown-item" href="#"><i class="mdi mdi-wallet"></i> My Wallet</a>
-                            <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings"></i> Settings</a>
-                            <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline"></i> Lock screen</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-danger" href="/users/logout"><i class="mdi mdi-power text-danger"></i> Logout</a>
+                            <a  href="/users/logout"><i class="mdi mdi-power text-danger"></i> Çıkış</a>
                         </div>
                     </div>
                 </li>
@@ -47,14 +42,6 @@
                     <button class="button-menu-mobile open-left waves-effect">
                         <i class="mdi mdi-menu"></i>
                     </button>
-                </li>
-                <li class="d-none d-md-inline-block">
-                    <form role="search" class="app-search">
-                        <div class="form-group mb-0">
-                            <input type="text" class="form-control" placeholder="Search..">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </div>
-                    </form>
                 </li>
             </ul>
 
@@ -74,22 +61,22 @@
                     <li class="menu-title">Menu</li>
                     <li>
                         <a href="/dashboard" class="waves-effect">
-                            <i class="icon-accelerator"></i><span> Personal Dashboard </span>
+                            <i class="icon-accelerator"></i><span> Kullanıcı Paneli</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="waves-effect">
-                            <i class="icon-accelerator"></i><span> Admin Dashboard </span>
+                            <i class="fa fa-cubes"></i><span> Admin Paneli </span>
                         </a>
                     </li>
                     <li>
                         <a href="/dashboard/admin/alluser" class="waves-effect">
-                            <i class="icon-accelerator"></i><span> All Users </span>
+                            <i class="fa fa-users"></i><span> Tüm Kullanıcılar </span>
                         </a>
                     </li>
                     <li>
                         <a href="/dashboard/admin/allurl" class="waves-effect">
-                            <i class="icon-accelerator"></i><span> All Urls </span>
+                            <i class="fa fa-link"></i><span> Tüm Linkler </span>
                         </a>
                     </li>  
                 </ul>
@@ -118,7 +105,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-right">
-                                <li class="breadcrumb-item"><a href="javascript:void(0);">Welcome, <%= user.name %> </a></li>
+                                <li class="breadcrumb-item" style="font-size: medium;"><a href="javascript:void(0);"><b>HOŞGELDİN,  <%= user.name %> </b> </a></li>
                             </ol>
                         </div>
                     </div> <!-- end row -->
@@ -132,7 +119,7 @@
                                     <i class="mdi mdi-account-check bg-primary  text-white"></i>
                                 </div>
                                 <div>
-                                    <h5 class="font-16">Total Users</h5>
+                                    <h5 class="font-16">Toplam Kullanıcı</h5>
                                 </div>
                                 <h3 class="mt-4"><%= card.usercount %></h3>
                                 <div class="progress mt-4" style="height: 4px;">
@@ -149,7 +136,7 @@
                                     <i class="mdi mdi-link-variant bg-success text-white"></i>
                                 </div>
                                 <div>
-                                    <h5 class="font-16">Total Urls</h5>
+                                    <h5 class="font-16">Toplam Link</h5>
                                 </div>
                                 <h3 class="mt-4"><%= card.urlcount %></h3>
                                 <div class="progress mt-4" style="height: 4px;">
@@ -166,7 +153,7 @@
                                     <i class="mdi mdi-plus-one bg-warning text-white"></i>
                                 </div>
                                 <div>
-                                    <h5 class="font-16">Total Clicks</h5>
+                                    <h5 class="font-16">Toplam Tıklanma</h5>
                                 </div>
                                 <h3 class="mt-4"><%= card.clickcount %></h3>
                                 <div class="progress mt-4" style="height: 4px;">

@@ -111,15 +111,22 @@
                     <li class="menu-title">Menu</li>
                     <li>
                         <a href="/dashboard" class="waves-effect">
-                            <i class="icon-accelerator"></i><span> Dashboard </span>
+                            <i class="icon-accelerator"></i><span> Panel </span>
                         </a>
                     </li>
                     
                     <li>
-                        <a href="/dashboard/url" class="waves-effect">
-                            <i class="icon-accelerator"></i><span> Urls History </span>
+                        <a href="#" class="waves-effect">
+                            <i class="fa fa-list"></i><span> Url Geçmişi </span>
                         </a>
                     </li>
+                    <% if (user.isAdmin) { %> 
+                        <li>
+                            <a href="/dashboard/admin" class="waves-effect">
+                                <i class="fa fa-cubes"></i><span> Admin Paneli </span>
+                            </a>
+                        </li>  
+                    <% } %>
 
                 </ul>
 
@@ -147,7 +154,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-right">
-                                <li class="breadcrumb-item"><a href="javascript:void(0);">Welcome, <%= user.name %> </a></li>
+                                <li class="breadcrumb-item" style="font-size: medium;"><a href="javascript:void(0);"><b>HOŞGELDİN,  <%= user.name %> </b> </a></li>
                             </ol>
                         </div>
                     </div> <!-- end row -->

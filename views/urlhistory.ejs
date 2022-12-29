@@ -36,7 +36,7 @@
                             <!-- item-->
                             
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-danger" href="/users/logout"><i class="mdi mdi-power text-danger"></i> Logout</a>
+                            <a class="dropdown-item text-danger" href="/users/logout"><i class="mdi mdi-power text-danger"></i> çIKIŞ</a>
                         </div>
                     </div>
                 </li>
@@ -57,45 +57,45 @@
     </div>
     <!-- Top Bar End -->
 
-    <!-- ========== Left Sidebar Start ========== -->
-    <div class="left side-menu">
-        <div class="slimscroll-menu" id="remove-scroll">
+   <!-- ========== Left Sidebar Start ========== -->
+   <div class="left side-menu">
+    <div class="slimscroll-menu" id="remove-scroll">
 
-            <!--- Sidemenu -->
-            <div id="sidebar-menu">
-                <!-- Left Menu Start -->
-                <ul class="metismenu" id="side-menu">
-                    <li class="menu-title">Menu</li>
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+            <!-- Left Menu Start -->
+            <ul class="metismenu" id="side-menu">
+                <li class="menu-title">Menu</li>
+                <li>
+                    <a href="/dashboard" class="waves-effect">
+                        <i class="icon-accelerator"></i><span> Panel </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" class="waves-effect">
+                        <i class="fa fa-list"></i><span> Url Geçmişi </span>
+                    </a>
+                </li>
+                <% if (user.isAdmin) { %> 
                     <li>
-                        <a href="/dashboard" class="waves-effect">
-                            <i class="icon-accelerator"></i><span> Dashboard </span>
+                        <a href="/dashboard/admin" class="waves-effect">
+                            <i class="fa fa-cubes"></i><span> Admin Paneli </span>
                         </a>
-                    </li>
-                    
-                    <li>
-                        <a href="#" class="waves-effect">
-                            <i class="icon-accelerator"></i><span> Urls History </span>
-                        </a>
-                    </li>
-                    <% if (user.isAdmin) { %> 
-                        <li>
-                            <a href="/dashboard/admin" class="waves-effect">
-                                <i class="icon-accelerator"></i><span> Admin Dashboard </span>
-                            </a>
-                        </li>  
-                    <% } %>
+                    </li>  
+                <% } %>
 
-                </ul>
-
-            </div>
-            <!-- Sidebar -->
-            <div class="clearfix"></div>
+            </ul>
 
         </div>
-        <!-- Sidebar -left -->
+        <!-- Sidebar -->
+        <div class="clearfix"></div>
 
     </div>
-    <!-- Left Sidebar End -->
+    <!-- Sidebar -left -->
+
+</div>
+<!-- Left Sidebar End -->
 
     <!-- ============================================================== -->
     <!-- Start right Content here -->
@@ -111,7 +111,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-right">
-                                <li class="breadcrumb-item"><a href="javascript:void(0);">Welcome, <%= user.name %> </a></li>
+                                <li class="breadcrumb-item" style="font-size: medium;"><a href="javascript:void(0);"><b>HOŞGELDİN,  <%= user.name %> </b> </a></li>
                             </ol>
                         </div>
                     </div> <!-- end row -->

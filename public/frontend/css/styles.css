@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #2e302b;
+    background-color: #E8F9FD;
   }
   
   header {
@@ -64,12 +64,12 @@
     text-align: center;
     font-size: 1.25rem;
     transition: border-bottom-color 0.3s ease-in-out;
-    caret-color: #f67129;
+    caret-color: #0AA1DD;
   }
   
   .input:focus {
     outline: none;
-    border-bottom-color: #f67129;
+    border-bottom-color: #0AA1DD;
   }
   
   .input::placeholder {
@@ -83,7 +83,7 @@
     font-size: 1.15rem;
     color: #F5F5F5;
     border: none;
-    background-color: #f67129;
+    background-color: #0AA1DD;
     padding: 0.75em 1.25rem;
     box-shadow: 3px 3px 0 0 #ffffff;
     transition: box-shadow 0.2s ease-in-out;
@@ -107,7 +107,7 @@
     height:60px;
     bottom:40px;
     right:40px;
-    background-color:#f67129;
+    background-color:#0AA1DD;
     color:#FFF;
     border-radius:50px;
     text-align:center;
