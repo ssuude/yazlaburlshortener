@@ -8,10 +8,10 @@
         <div class="topbar-left">
             <a href="/" class="logo">
                 <span class="logo-light">
-                    <i class="mdi mdi-camera-control"></i> Url Kısaltıcı
+                    <i style="font-size: 25px;"class="mdi mdi-fire"></i> URL KISALTICI
                 </span>
                 <span class="logo-sm">
-                    <i class="mdi mdi-camera-control"></i>
+                    <i class="mdi mdi-fire"></i>
                 </span>
             </a>
         </div>
@@ -141,7 +141,7 @@
                                     <thead>
                                         <tr>
                                             <th>Hedef Link</th>
-                                            <th>Kısa Ad</th>
+                                            <th>Kısa Ad </th>
                                             <th>Oluşturma Tarihi</th>
                                             <th>Geçerlilik Süresi</th>
                                             <th>Tıklanma Sayısı</th>
@@ -154,7 +154,7 @@
                                         <% urls.forEach(url => {%> 
                                             <tr>
                                                 <td style="max-width:600px"><a href="<%= url.url %>" target="_blank"><%= url.url %></a></td>
-                                                <td style="min-width:100px"><%= url.slug %> </td>
+                                                <td style="min-width:100px"><%= url.slug %> <a href="http://bsm-sh.onrender.com/<%=url.slug%>" >Git</a></td>
                                                 <td><%= url.createdOn %> </td>
                                                 <td><%= url.validFor ? (url.validFor + 'Days') : 'Lifetime' %></td>
                                                 <td style="max-width:50px"><%= url.clickCount %> </td>

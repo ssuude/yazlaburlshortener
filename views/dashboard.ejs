@@ -8,10 +8,10 @@
         <div class="topbar-left">
             <a href="/" class="logo">
                 <span class="logo-light">
-                    <i class="mdi mdi-camera-control"></i> URL KISALTICI
+                    <i style="font-size: 25px;"class="mdi mdi-fire"></i> URL KISALTICI
                 </span>
                 <span class="logo-sm">
-                    <i class="mdi mdi-camera-control"></i>
+                    <i class="mdi mdi-fire"></i>
                 </span>
             </a>
         </div>
@@ -132,8 +132,8 @@
                                                 <span aria-hidden="true">×</span>
                                             </button>
                                             Kısa URL'iniz: <a  id="p<%= index%>" href="<%= created %>" class="alert-link"><%= created %> </a>.
-                                            <a style="display:inline-block;" onclick="copyToClipboard('#p<%= index %>');" class="btn btn-lg-square mx-2"><i style="font-size: 30px;"class="fas fa-clipboard"></i></a>
-                                            <span><p id="myP" style="display: none;position:absolute;float:right;right:732px;bottom:11px">Kopyalandı</p></span> 
+                                            <a style="display:inline-block;" onclick="copyToClipboard('#p<%= index %>');" class="btn btn-lg-square mx-2"><i style="display:inline-block;font-size: 30px;"class="fas fa-clipboard"></i></a>
+                                            <span style="display:inline-block;"><p id="myP" style="display: none;position:relative">Kopyalandı!</p></span> 
                                         
                                         </div>
                                     <% } %>
