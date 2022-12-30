@@ -7,7 +7,7 @@ const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 // Load Url model
 const Url = require('../models/Url');;
 Url.collection.createIndex({"slug":1},{unique: true})
-const qr = require("qrcode");
+
 
 
 

@@ -49,7 +49,7 @@ TABLES OF CSS
 ===================*/
 body {
   background-repeat: repeat;
-  background: #1a1c2a;
+  background: #E8F0F2;
   font-family: "Poppins", sans-serif;
   color: #a5a6ad;
   font-size: 13px;
@@ -89,7 +89,7 @@ svg {
 }
 
 a {
-  color: #616f80;
+  color: #ffffff;
 }
 
 a:hover, a:active, a:focus {
@@ -132,8 +132,8 @@ b, strong {
 .dropdown-menu {
   padding: 4px 0;
   font-size: 13px;
-  background-color: #222437;
-  border-color: #2e304a;
+  background-color: #39A2DB;
+  border-color: #39A2DB;
   margin: 0;
 }
 
@@ -144,12 +144,12 @@ b, strong {
 }
 
 .dropdown-item:active, .dropdown-item:hover, .dropdown-item:focus {
-  background-color: #2e304a !important;
+  background-color: #39A2DB !important;
   color: #a5a6ad !important;
 }
 
 .dropdown-item.active, .dropdown-item:active {
-  background-color: #2e304a;
+  background-color: #39A2DB;
   color: #a5a6ad;
 }
 
@@ -201,6 +201,12 @@ b, strong {
 
 .bg-info {
   background-color: #59c6fb !important;
+}
+.bg-purple{
+  background-color: #AE16D3 !important;
+}
+.bg-yellow{
+  background-color: #FFAE60 !important;
 }
 
 .bg-warning {
@@ -330,8 +336,8 @@ dt {
 }
 
 .custom-control-label::before {
-  background-color: #2e304a;
-  border: #2e304a solid 1px;
+  background-color: #39A2DB;
+  border: #39A2DB solid 1px;
 }
 
 /* Navs & Tabs */
@@ -634,6 +640,7 @@ dt {
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 5px;
+  color: #a73c6b;
 }
 
 .rating-symbol-foreground {
@@ -871,7 +878,7 @@ dt {
 }
 
 .topbar .topbar-left {
-  background-color: #2155CD;
+  background-color: #39A2DB;
   float: left;
   text-align: center;
   height: 70px;
@@ -894,7 +901,7 @@ dt {
 }
 
 .topbar .navbar-custom {
-  background-color: #2155CD;
+  background-color: #39A2DB;
   border-radius: 0;
   margin-bottom: 0;
   padding: 0 10px 0 0;
@@ -1079,7 +1086,7 @@ dt {
   display: inline-block;
   height: 70px;
   width: 60px;
-  background-color: #2155CD;
+  background-color: #39A2DB;
   font-size: 24px;
 }
 
