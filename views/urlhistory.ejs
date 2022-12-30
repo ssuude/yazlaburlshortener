@@ -115,11 +115,10 @@
                         <div class="card m-b-30">
                             <div class="card-body">
 
-                                <h4 class="mt-0 header-title">Url History</h4>
-                                <p class="sub-title../plugins">
-                                    You can find all <code
-                                    class="highlighter-rouge">short urls </code> generated from your account here!
-                                </p>
+                                <h4 class="mt-0 header-title">Url Geçmişi</h4>
+                                <h5 class="sub-title">
+                                    Kısalttığınız tüm <code class="highlighter-rouge"> linkleri </code> burada bulabilirisniz.
+                                </h5>
                                 <!--Start Message Display-->
                                 <% if(alert) { %> 
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -154,11 +153,11 @@
                                     <tbody>
                                         <% urls.forEach(url => {%> 
                                             <tr>
-                                                <td><a href="<%= url.url %>" target="_blank"><%= url.url %></a></td>
-                                                <td><%= url.slug %> </td>
+                                                <td style="max-width:600px"><a href="<%= url.url %>" target="_blank"><%= url.url %></a></td>
+                                                <td style="min-width:100px"><%= url.slug %> </td>
                                                 <td><%= url.createdOn %> </td>
                                                 <td><%= url.validFor ? (url.validFor + 'Days') : 'Lifetime' %></td>
-                                                <td><%= url.clickCount %> </td>
+                                                <td style="max-width:50px"><%= url.clickCount %> </td>
                                                 <td>
                                                     <div>
                                                         <form action="/dashboard/url" method="post">
