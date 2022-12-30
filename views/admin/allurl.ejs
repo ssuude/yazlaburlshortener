@@ -8,7 +8,7 @@
        <div class="topbar-left">
            <a href="/" class="logo">
                <span class="logo-light">
-                   <i class="mdi mdi-camera-control"></i> hyp.de
+                   <i class="mdi mdi-camera-control"></i> Url kısaltıcı
                </span>
                <span class="logo-sm">
                    <i class="mdi mdi-camera-control"></i>
@@ -26,12 +26,20 @@
                        </a>
                        <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                            <!-- item-->
-                           <a  href="/users/logout"><i class="mdi mdi-power text-danger"></i> Çıkış</a>
+                           <a  href="/users/logout"><i class="mdi mdi-power text-white"></i> Çıkış</a>
                        </div>
                    </div>
                </li>
 
            </ul>
+           <ul class="list-inline menu-left mb-0">
+            <li class="float-left">
+                <button class="button-menu-mobile open-left waves-effect">
+                    <i class="mdi mdi-menu"></i>
+                </button>
+            </li>
+        </ul>
+
 
            
 
@@ -108,10 +116,9 @@
                            <div class="card-body">
 
                                <h4 class="mt-0 header-title">Url Geçmişi</h4>
-                               <p class="sub-title../plugins">
-                                   Oluşturduğunuz tüm <code
-                                   class="highlighter-rouge"> kısa linkler </code> burada!
-                               </p>
+                               <h5 class="sub-title">
+                                <code class="highlighter-rouge"> Tüm kullanıcıların</code>kısalttığı linkleri burada bulabilirisniz.
+                            </h5>
                                <!--Start Message Display-->
                                <% if(alert) { %> 
                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -138,7 +145,7 @@
                                            <th>Oluştulan</th>
                                            <th>Geçerli</th>
                                            <th>Tıklanma Sayısı</th>
-                                           <th>Actions</th>
+                                           <th>Düzenle</th>
                                        </tr>
                                    </thead>
 

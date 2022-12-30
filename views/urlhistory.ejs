@@ -8,7 +8,7 @@
         <div class="topbar-left">
             <a href="/" class="logo">
                 <span class="logo-light">
-                    <i class="mdi mdi-camera-control"></i> short
+                    <i class="mdi mdi-camera-control"></i> Url Kısaltıcı
                 </span>
                 <span class="logo-sm">
                     <i class="mdi mdi-camera-control"></i>
@@ -19,14 +19,6 @@
         <nav class="navbar-custom">
             <ul class="navbar-right list-inline float-right mb-0">
                 
-                <!-- language-->
-                
-                <!-- full screen -->
-                
-
-                <!-- notification -->
-                
-
                 <li class="dropdown notification-list list-inline-item">
                     <div class="dropdown notification-list nav-pro-img">
                         <a class="dropdown-toggle nav-link arrow-none nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
@@ -34,9 +26,9 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                             <!-- item-->
+
                             
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-danger" href="/users/logout"><i class="mdi mdi-power text-danger"></i> Çıkış</a>
+                            <a  href="/users/logout"><i class="mdi mdi-power text-white"></i> Çıkış</a>
                         </div>
                     </div>
                 </li>
@@ -49,7 +41,7 @@
                         <i class="mdi mdi-menu"></i>
                     </button>
                 </li>
-               
+                
             </ul>
 
         </nav>
@@ -123,10 +115,10 @@
                         <div class="card m-b-30">
                             <div class="card-body">
 
-                                <h4 class="mt-0 header-title">Url Geçmişi</h4>
+                                <h4 class="mt-0 header-title">Url History</h4>
                                 <p class="sub-title../plugins">
-                                    Oluşturduğunuz tüm  <code
-                                    class="highlighter-rouge">kısa linkler</code> burada!
+                                    You can find all <code
+                                    class="highlighter-rouge">short urls </code> generated from your account here!
                                 </p>
                                 <!--Start Message Display-->
                                 <% if(alert) { %> 
@@ -149,12 +141,12 @@
                                 <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; max-width: 80%;">
                                     <thead>
                                         <tr>
-                                            <th>Destination Url</th>
-                                            <th>Slug</th>
-                                            <th>Created On</th>
-                                            <th>Valid For</th>
-                                            <th>Click Count</th>
-                                            <th>Actions</th>
+                                            <th>Hedef Link</th>
+                                            <th>Kısa Ad</th>
+                                            <th>Oluşturma Tarihi</th>
+                                            <th>Geçerlilik Süresi</th>
+                                            <th>Tıklanma Sayısı</th>
+                                            <th>Düzenle</th>
                                         </tr>
                                     </thead>
 
@@ -171,7 +163,7 @@
                                                     <div>
                                                         <form action="/dashboard/url" method="post">
                                                             <input type="hidden" name="slug" id="slug" value="<%=url.slug%>">
-                                                            <button type="submit" value="submit" class="btn btn-primary btn-sm">Delete</button>
+                                                            <button type="submit" value="submit" class="btn btn-warning btn-sm">Sil</button>
                                                         </form>        
                                                     </div>
                                                 </td>
