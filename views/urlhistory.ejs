@@ -154,11 +154,11 @@
                                     <tbody>
                                         <% urls.forEach(url => {%> 
                                             <tr>
-                                                <td><a href="<%= url.url %>" target="_blank"><%= url.url %></a></td>
-                                                <td><%= url.slug %> </td>
+                                                <td style="max-width:600px"><a href="<%= url.url %>" target="_blank"><%= url.url %></a></td>
+                                                <td style="min-width:100px"><%= url.slug %> </td>
                                                 <td><%= url.createdOn %> </td>
                                                 <td><%= url.validFor ? (url.validFor + 'Days') : 'Lifetime' %></td>
-                                                <td><%= url.clickCount %> </td>
+                                                <td style="max-width:50px"><%= url.clickCount %> </td>
                                                 <td>
                                                     <div>
                                                         <form action="/dashboard/url" method="post">
