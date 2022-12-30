@@ -67,7 +67,7 @@ router.post('/url', ensureAuthenticated,async(req,res) => {
         res.render('urlhistory',{
             user:req.user,
             urls:urls,
-            alert:"Successfully deleted the url with slug - "+req.body.slug,
+            alert:"Başarıyla silindi :- "+req.body.slug,
             error:null
         })
 

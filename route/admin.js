@@ -44,10 +44,10 @@ router.post('/allurl/deleteurl', async(req,res) => {
     try {
         await Url.deleteOne({slug:req.body.slug})
         res.notifications = {};
-        res.notifications.success = 'Successfully deleted slug with url' + req.body.slug;
+        res.notifications.success = 'Başarıyla silindi: -' + req.body.slug;
         res.redirect('/dashboard/admin/allurl');
     } catch(err) {
-        res.notifications.error = 'Unknown error occured';
+        res.notifications.error = 'Hata!';
         res.redirect('/dashboard/admin/allurl');
     }
 })
@@ -56,10 +56,11 @@ router.post('/alluser/deleteuser', async(req,res) => {
     try {
         await User.deleteOne({_id:req.body.id})
         res.notifications = {};
-        res.notifications.success = 'Successfully deleted user';
+        res.notifications.success = 'Kullanıcı başarıyla silindi!';
         res.redirect('/dashboard/admin/alluser');
     } catch(err) {
-        res.notifications.error = 'Unknown error occured';
+        console.log(err)
+        res.notifications.error = 'Bilinmeyen Hata!';
         res.redirect('/dashboard/admin/alluser');
     }
 })
