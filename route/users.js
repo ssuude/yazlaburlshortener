@@ -38,19 +38,19 @@ router.post('/register', (req, res) => {
   let errors = [];
 
   if (!name || !email || !password || !password2) {
-    errors.push({ msg: 'Please enter all fields' });
+    errors.push({ msg: 'Lütfen tüm alanları girin' });
   }
 
   if (password != password2) {
-    errors.push({ msg: 'Passwords do not match' });
+    errors.push({ msg: 'Parola uyuşmuyor' });
   }
 
   if (password.length < 6) {
-    errors.push({ msg: 'Password must be at least 6 characters' });
+    errors.push({ msg: 'Şifre en az 6 karakterden oluşmalıdır' });
   }
 
   if (errors.length > 0) {
-    res.render('register', {
+    res.render('Kayıt ol', {
       errors,
       name,
       email,
@@ -60,8 +60,8 @@ router.post('/register', (req, res) => {
   } else {
     User.findOne({ email: email }).then(user => {
       if (user) {
-        errors.push({ msg: 'Email already exists' });
-        res.render('register', {
+        errors.push({ msg: 'Bu e-posta zaten var' });
+        res.render('Kayıt ol', {
           errors,
           name,
           email,
@@ -84,7 +84,7 @@ router.post('/register', (req, res) => {
               .then(user => {
                 req.flash(
                   'success_msg',
-                  'You are now registered and can log in'
+                  'Artık kayıt oldunuz ve giriş yapabilirsiniz'
                 );
                 res.redirect('/users/login');
               })
@@ -122,7 +122,7 @@ router.post('/login',
 // Logout
 router.get('/logout', (req, res) => {
   req.logout();
-  req.flash('success_msg', 'You are logged out');
+  req.flash('success_msg', 'Çıkış Yapıldı');
   res.redirect('/users/login');
 });
 
